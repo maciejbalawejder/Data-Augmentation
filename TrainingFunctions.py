@@ -1,3 +1,6 @@
+import torch
+import numpy as np
+
 class Network:
     """
     Network class that takes pytorch model, learning rate and device as input.
@@ -27,7 +30,7 @@ class Network:
 
         self.model = model
         self.lr = learning_rate
-        self.loss = nn.CrossEntropyLoss()
+        self.loss = torch.nn.CrossEntropyLoss()
         self.opt = torch.optim.Adam(self.model.parameters(), lr = self.lr)
         self.train_loss = []
         self.val_loss = []
