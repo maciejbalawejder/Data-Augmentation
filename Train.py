@@ -22,7 +22,7 @@ normalization = configurations[0]
 accuracy = []
 loss = []
 
-""" Traning model for each augmentation -> Plain, Classic, RandAug. """
+""" Traning model for each augmentation -> Plain, Baseline, RandAug. """
 for i in range(len(configurations)):
     model = ResNet(n).to(device)
     train_loader, val_loader, test_loader = LoadDataset(batch, normalization, configurations[i])
