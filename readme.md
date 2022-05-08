@@ -1,5 +1,5 @@
 # Data Augmentation in Torchvison
-This is an analysis of different data augmentations techniques in Torchvision evaluated on CIFAR10. You can find the accompanying article on my (__Medium__)[https://medium.com/@maciejbalawejder] page.
+This is an analysis of different data augmentations techniques in Torchvision evaluated on CIFAR10. You can find the accompanying article on my [__Medium__](https://medium.com/@maciejbalawejder) page.
 
 ### Table of content: 
  - [Augmentations.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Augmentations.py) - three transformation setups:
