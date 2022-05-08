@@ -46,7 +46,7 @@ trainloader, valloader, testloader = LoadDataset(batch, normalization, augmentat
 >
 </p>
 
-[ResNet.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/ResNet.py) - ResNet configuration specially tailored for CIFAR-10 dataset, which takes parameter `n` that defines the number of `residual blocks at each stage.
+[ResNet.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/ResNet.py) - ResNet configuration specially tailored for CIFAR-10 dataset, which takes parameter `n` that defines the number of `residual blocks` at each stage.
 
 ```
 from ResNet import ResNet
