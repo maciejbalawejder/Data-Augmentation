@@ -1,9 +1,9 @@
 from tqdm.notebook import tqdm_notebook
-from CIFAR10 import LoadDataset
-from ResNet import ResNet
-from TrainingFunctions import Network
-from Augmentations import GetAugment
-from Plots import plot
+from cifar10 import LoadDataset
+from resnet import ResNet
+from training_functions import Network
+from augmentations import GetAugment
+from plots import plot
 
 # Parameters
 epochs = 40

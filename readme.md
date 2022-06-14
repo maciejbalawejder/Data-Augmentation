@@ -10,7 +10,7 @@ This is an analysis of different data augmentations techniques in Torchvision ev
 # Table of content: 
 
 ### Augmentations
-  [Augmentations.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Augmentations.py) - three transformation setups:
+  [augmentations.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Augmentations.py) - three transformation setups:
 
   1. Plain - only `Normalize()` operation.
 
@@ -19,7 +19,7 @@ This is an analysis of different data augmentations techniques in Torchvision ev
   3. AutoAugment - `AutoAugment` policy for CIFAR10 applied on the top of Baseline configuration.
 
   ```
-  from Augmentations import GetAugment
+  from augmentations import GetAugment
   plain, baseline, autoaugment = GetAugment()
   ```
   
@@ -31,10 +31,10 @@ This is an analysis of different data augmentations techniques in Torchvision ev
 >
 </p>
 
-[CIFAR10.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/CIFAR10.py) - file with CIFAR-10 loader which takes __batch size__, __normalization__ for train and validation set and __augmentations__ for training.
+[cifar10.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/CIFAR10.py) - file with CIFAR-10 loader which takes __batch size__, __normalization__ for train and validation set and __augmentations__ for training.
 
 ```
-from CIFAR10 import LoadDataset
+from cifar10 import LoadDataset
 trainloader, valloader, testloader = LoadDataset(batch, normalization, augmentations) 
 ```
 
@@ -46,19 +46,19 @@ trainloader, valloader, testloader = LoadDataset(batch, normalization, augmentat
 >
 </p>
 
-[ResNet.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/ResNet.py) - ResNet configuration specially tailored for CIFAR-10 dataset, which takes parameter `n` that defines the number of `residual blocks` at each stage.
+[resnet.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/ResNet.py) - ResNet configuration specially tailored for CIFAR-10 dataset, which takes parameter `n` that defines the number of `residual blocks` at each stage.
 
 ```
-from ResNet import ResNet
+from ResNet import resnet
 n = 3
 resnet20 = ResNet(n)
 ```
 
 ### Training Loops
-[TrainingFunctions.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/TrainingFunctions.py) - file with training, validation, testing loop.
+[training_functions.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/TrainingFunctions.py) - file with training, validation, testing loop.
 
 ```
-from TrainingFunctions import Network
+from training_functions import Network
 network = Network(model=ResNet(3), learning_rate=0.01, device="cuda")
 network.train_step(trainloader)
 ```
@@ -71,12 +71,12 @@ network.train_step(trainloader)
 >
 </p>
 
-[Plots.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Plots.py) - generates one plot for multiple models.
+[plots.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Plots.py) - generates one plot for multiple models.
 
 ```
-from Plots import plot
+from plots import plot
 plot([model1_train_loss, model1_val_loss, model2_train_loss, model2_val_los], "Loss")
 ```
 
 ### Training
-[Train.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Train.py) - combines all of the files above and train three different configurations
+[train.py](https://github.com/maciejbalawejder/Data-Augmentation/blob/main/Train.py) - combines all of the files above and train three different configurations
